@@ -767,7 +767,7 @@ const datasets = [dataset1, dataset2, dataset3];
 /**
  * Returns a list of all available datasets.
  */
-export const getDatasets = Promise.resolve(datasets);
+export const getDatasets = () => Promise.resolve(datasets);
 
 /**
  * Updates a dataset.
@@ -783,7 +783,7 @@ export const updateDataset = (id: string, update: DatasetUpdate): Promise<Datase
     return;
   }
 
-  const validName = /^[a-zA-Z0-9]*$/g.test(update.name || '');
+  const validName = /^[a-zA-Z0-9]{3,20}$/g.test(update.name || '');
 
   if (!validName) {
     Promise.reject('Dataset name may only contain alphanumeric characters');
