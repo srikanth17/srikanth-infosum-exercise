@@ -58,7 +58,6 @@ class Statistics extends React.Component {
     render() {
         const PieChart = rd3.PieChart;
         const { d3 } = this.state;
-        console.log(this.state.d3);
 
         // return (
         //     <div>
